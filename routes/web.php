@@ -104,7 +104,7 @@ Route::group(['prefix'=>'/admin','middleware'=>['auth','admin']],function(){
     Route::resource('users','UsersController');
     // Banner
     Route::resource('banner','BannerController');
-    // Brand
+    // Brand 
     Route::resource('brand','BrandController');
     // Profile
     Route::get('/profile','AdminController@profile')->name('admin-profile');
