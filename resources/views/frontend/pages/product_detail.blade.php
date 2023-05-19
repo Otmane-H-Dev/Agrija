@@ -60,7 +60,7 @@
 											<!-- End Images slider -->
 										</div>
 										<!-- End Product slider -->
-									</div>
+									</div> 
 									<div class="col-lg-6 col-12">
 										<div class="product-des">
 											<!-- Description -->
@@ -100,20 +100,7 @@
 											</div> --}}
 											<!--/ End Color -->
 											<!-- Size -->
-											@if($product_detail->size)
-												<div class="size mt-4">
-													<h4>Size</h4>
-													<ul>
-														@php 
-															$sizes=explode(',',$product_detail->size);
-															// dd($sizes);
-														@endphp
-														@foreach($sizes as $size)
-														<li><a href="#" class="one">{{$size}}</a></li>
-														@endforeach
-													</ul>
-												</div>
-											@endif
+										
 											<!--/ End Size -->
 											<!-- Product Buy -->
 											<div class="product-buy">

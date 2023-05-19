@@ -30,10 +30,10 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $brand=Brand::get();
+        
         $category=Category::where('is_parent',1)->get();
         // return $category;
-        return view('backend.product.create')->with('categories',$category)->with('brands',$brand);
+        return view('backend.product.create')->with('categories',$category);
     }
 
     /**
@@ -53,7 +53,7 @@ class ProductController extends Controller
             'size'=>'nullable',
             'stock'=>"required|numeric",
             'cat_id'=>'required|exists:categories,id',
-            'brand_id'=>'nullable|exists:brands,id',
+            
             'child_cat_id'=>'nullable|exists:categories,id',
             'is_featured'=>'sometimes|in:1',
             'status'=>'required|in:active,inactive',
@@ -109,13 +109,13 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $brand=Brand::get();
+        
         $product=Product::findOrFail($id);
         $category=Category::where('is_parent',1)->get();
         $items=Product::where('id',$id)->get();
         // return $items;
         return view('backend.product.edit')->with('product',$product)
-                    ->with('brands',$brand)
+                    
                     ->with('categories',$category)->with('items',$items);
     }
 
@@ -139,7 +139,7 @@ class ProductController extends Controller
             'cat_id'=>'required|exists:categories,id',
             'child_cat_id'=>'nullable|exists:categories,id',
             'is_featured'=>'sometimes|in:1',
-            'brand_id'=>'nullable|exists:brands,id',
+            
             'status'=>'required|in:active,inactive',
             'condition'=>'required|in:default,new,hot',
             'price'=>'required|numeric',

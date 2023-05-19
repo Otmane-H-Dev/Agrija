@@ -24,9 +24,8 @@
               <th>Is Featured</th>
               <th>Price</th>
               <th>Discount</th>
-              <th>Size</th>
               <th>Condition</th>
-              <th>Brand</th>
+             
               <th>Stock</th>
               <th>Photo</th>
               <th>Status</th>
@@ -41,9 +40,7 @@
               <th>Is Featured</th>
               <th>Price</th>
               <th>Discount</th>
-              <th>Size</th>
               <th>Condition</th>
-              <th>Brand</th>
               <th>Stock</th>
               <th>Photo</th>
               <th>Status</th>
@@ -56,7 +53,6 @@
               @php
               $sub_cat_info=DB::table('categories')->select('title')->where('id',$product->child_cat_id)->get();
               // dd($sub_cat_info);
-              $brands=DB::table('brands')->select('title')->where('id',$product->brand_id)->get();
               @endphp
                 <tr>
                     <td>{{$product->id}}</td>
@@ -71,7 +67,6 @@
                     <td>  {{$product->discount}}% OFF</td>
                     
                     <td>{{$product->condition}}</td>
-                    <td> {{ucfirst($product->brand->title)}}</td>
                     <td>
                       @if($product->stock>0)
                       <span class="badge badge-primary">{{$product->stock}}</span>
