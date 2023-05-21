@@ -120,8 +120,7 @@
                                                     <span class="out-of-stock">Sale out</span>
                                                 @elseif($product->condition=='new')
                                                     <span class="new">New</span
-                                                @elseif($product->condition=='hot')
-                                                    <span class="hot">Hot</span>
+                                        
                                                 @else
                                                     <span class="price-dec">{{$product->discount}}% Off</span>
                                                 @endif
@@ -209,7 +208,7 @@
             <div class="col-12">
                 <div class="owl-carousel popular-slider">
                     @foreach($product_lists as $product)
-                        @if($product->condition=='hot')
+                        @if($product->condition=='new')
                             <!-- Start Single Product -->
                         <div class="single-product">
                             <div class="product-img">
