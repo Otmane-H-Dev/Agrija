@@ -1,5 +1,7 @@
 @extends('frontend.layouts.master')
-
+@php
+	$title="Fresh wholesale"." $product_detail->title ". '- Buy High-Quality '." $product_detail->title ".' Online | AGRIJA';
+@endphp
 @section('meta')
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +16,10 @@
 	<meta property="og:image" content="{{$product_detail->photo}}">
 	<meta property="og:description" content="{{$product_detail->description}}">
 @endsection
-@section('title','E-SHOP || PRODUCT DETAIL')
+@section('title')
+{{$title}}
+@endsection
+
 @section('main-content')
 
 		<!-- Breadcrumbs -->
@@ -40,7 +45,7 @@
 						<div class="row"> 
 							<div class="col-12">
 								<div class="row">
-									<div class="col-lg-6 col-12">
+									<div class="col-lg-6 col-12"> 
 										<!-- Product Slider -->
 										<div class="product-gallery">
 											<!-- Images slider -->
@@ -52,7 +57,7 @@
 													@endphp
 													@foreach($photo as $data)
 														<li data-thumb="{{$data}}" rel="adjustX:10, adjustY:">
-															<img src="{{$data}}" alt="{{$data}}">
+															<img src="{{$data}}" alt="{{$product_detail->title}}">
 														</li>
 													@endforeach
 												</ul>
@@ -65,7 +70,7 @@
 										<div class="product-des">
 											<!-- Description -->
 											<div class="short">
-												<h4>{{$product_detail->title}}</h4>
+												<h1>{{$product_detail->title}}</h1>
 												<div class="rating-main">
 													<ul class="rating">
 														@php
@@ -85,6 +90,10 @@
                                                     $after_discount=($product_detail->price-(($product_detail->price*$product_detail->discount)/100));
                                                 @endphp
 												<p class="price"><span class="discount">${{number_format($after_discount,2)}}</span><s>${{number_format($product_detail->price,2)}}</s> </p>
+												<div>
+													<br>
+													<h6>Product Summary:</h6>
+												</div>
 												<p class="description">{!!($product_detail->summary)!!}</p>
 											</div>
 											<!--/ End Description -->
@@ -147,8 +156,8 @@
 											<div class="nav-main">
 												<!-- Tab Nav -->
 												<ul class="nav nav-tabs" id="myTab" role="tablist">
-													<li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#description" role="tab">Description</a></li>
-													<li class="nav-item"><a class="nav-link" data-toggle="tab" href="#reviews" role="tab">Reviews</a></li>
+													<li class="nav-item"><h2><a class="nav-link active" data-toggle="tab" href="#description" role="tab">Description</a></h2></li>
+													<li class="nav-item"><h2><a class="nav-link" data-toggle="tab" href="#reviews" role="tab">Reviews</a></h2></li>
 												</ul>
 												<!--/ End Tab Nav -->
 											</div>
@@ -399,7 +408,7 @@
                                     <span><i class="fa fa-check-circle-o"></i> in stock</span>
                                 </div>
                             </div>
-                            <h3>$29.00</h3>
+                            
                             <div class="quickview-peragraph">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia iste laborum ad impedit pariatur esse optio tempora sint ullam autem deleniti nam in quos qui nemo ipsum numquam.</p>
                             </div>
@@ -448,7 +457,7 @@
                                 <a href="#" class="btn min"><i class="fa fa-compress"></i></a>
                             </div>
                             <div class="default-social">
-                                <h4 class="share-now">Share:</h4>
+                                <h1 class="share-now">Share:</h1>
                                 <ul>
                                     <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
                                     <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
