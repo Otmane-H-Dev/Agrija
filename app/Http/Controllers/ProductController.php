@@ -149,7 +149,7 @@ class ProductController extends Controller
         $data['is_featured']=$request->input('is_featured',0);
         
         // return $data;
-        $status=$product->fill($data)->save();
+        $status=$product->fill($data)->save();  
         if($status){
             request()->session()->flash('success','Product Successfully updated');
         }
