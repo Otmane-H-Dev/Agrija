@@ -4910,3 +4910,15 @@ Version:1.0
 /*=============================
 	End Footer CSS
 ===============================*/
+
+/*=============================
+	certification section image
+===============================*/
+.fullscreen-container {
+    background-image: url('/storage/photos/1/certifications.png');
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+}
+

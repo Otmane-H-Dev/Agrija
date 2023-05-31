@@ -38,7 +38,7 @@ class BannerController extends Controller
     {
         // return $request->all();
         $this->validate($request,[
-            'title'=>'string|required|max:50',
+            'title'=>'string|required|max:180',
             'description'=>'string|nullable',
             'photo'=>'string|required',
             'status'=>'required|in:active,inactive',
@@ -95,7 +95,7 @@ class BannerController extends Controller
     {
         $banner=Banner::findOrFail($id);
         $this->validate($request,[
-            'title'=>'string|required|max:50',
+            'title'=>'string|required|max:180',
             'description'=>'string|nullable',
             'photo'=>'string|required',
             'status'=>'required|in:active,inactive',
