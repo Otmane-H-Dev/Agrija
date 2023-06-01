@@ -339,6 +339,11 @@
 <!-- End Shop Blog  -->
 
 <!-- certifications  -->
+<div class="col-12">
+    <div class="section-title">
+        <h2>Certifications </h2>
+    </div>
+</div>
 
 <div class="fullscreen-container"></div>
 <!-- certifications  end -->

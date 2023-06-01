@@ -401,7 +401,7 @@ class FrontendController extends Controller
             ]);
     }
     // Reset password
-    public function showResetForm(){
+    public function showResetForm(){  
         return view('auth.passwords.old-reset');
     }
 
