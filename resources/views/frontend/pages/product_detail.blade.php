@@ -8,7 +8,7 @@
 	<meta name='copyright' content=''>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="keywords" content="online shop, purchase, cart, ecommerce site, best online shopping">
+	<meta name="keywords" content="Wholesale fruits, Wholesale vegetables, Wholesale herbs, Bulk purchase of fruits and vegetables, Wholesale sale of fruits and vegetables, Wholesale supplier of fruits and vegetables, Wholesale market for fruits and vegetables, Wholesale prices for fruits and vegetables, Bulk delivery of fruits and vegetables, Wholesale platform for fruits and vegetables, Wholesale distributor of fruits and vegetables, Wholesale importer of fruits and vegetables, Wholesale exporter of fruits and vegetables, Fresh wholesale fruits and vegetables, Bulk purchase of fruits and vegetables, Wholesale selling of fruits and vegetables, Wholesale supply of fruits and vegetables, Wholesale company for fruits and vegetables, Organic wholesale fruits and vegetables, Seasonal wholesale fruits and vegetables.">
 	<meta name="description" content="{{$product_detail->summary}}">
 	<meta property="og:url" content="{{route('product-detail',$product_detail->slug)}}">
 	<meta property="og:type" content="article">

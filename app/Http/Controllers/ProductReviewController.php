@@ -19,7 +19,7 @@ class ProductReviewController extends Controller
     {
         $reviews=ProductReview::getAllReview();
         
-        return view('backend.review.index')->with('reviews',$reviews);
+        return view('backend.review.index')->with('reviews',$reviews); 
     }
 
     /**
