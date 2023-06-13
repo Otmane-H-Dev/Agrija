@@ -1,0 +1,13 @@
+User-agent: *
+Disallow:/user
+
+
+
+Sitemap: http://www.Agrija-shop.com/sitemap.xml
+
+Disallow: /private/
+Disallow: /admin/
+Disallow: /*.pdf
+Disallow: /*.doc
+
+
