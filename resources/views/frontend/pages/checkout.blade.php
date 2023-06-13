@@ -31,7 +31,7 @@
                         <div class="col-lg-8 col-12">
                             <div class="checkout-form">
                                 <h2>Make Your Checkout Here</h2>
-                                <p>Please register in order to checkout more quickly</p>
+                                <p>Please provide shipping informations</p>
                                 <!-- Form -->
                                 <div class="row">
                                     <div class="col-lg-6 col-md-6 col-12">
@@ -225,7 +225,7 @@
                                                 <option value="MM">Myanmar [Burma]</option>
                                                 <option value="NA">Namibia</option>
                                                 <option value="NR">Nauru</option>
-                                                <option value="NP" selected="selected">Nepal</option>
+                                                <option value="NP" >Nepal</option>
                                                 <option value="NL">Netherlands</option>
                                                 <option value="AN">Netherlands Antilles</option>
                                                 <option value="NC">New Caledonia</option>
@@ -305,7 +305,7 @@
                                                 <option value="UG">Uganda</option>
                                                 <option value="UA">Ukraine</option>
                                                 <option value="AE">United Arab Emirates</option>
-                                                <option value="Uk">United Kingdom</option>
+                                                <option value="Uk" selected="selected">United Kingdom</option>
                                                 <option value="UY">Uruguay</option>
                                                 <option value="UM">U.S. Minor Outlying Islands</option>
                                                 <option value="VI">U.S. Virgin Islands</option>
@@ -375,10 +375,16 @@
                                                     <span>Free</span>
                                                 @endif
                                             </li>
+                                            <ul>
+                                                <li>Minimum charge for small shipments:</li>
+                                                <li>-By Air:€50 to €100</li>
+                                                <li>-By Truck:€100 to €300</li>
+                                                <li>-By Ship:€50 to €100</li>
+                                
+                                                <li>Additional charges for specialized equipment, refrigeration, and other services may apply.</li>
+                                              </ul>
                                             
-                                            @if(session('coupon'))
-                                            <li class="coupon_price" data-price="{{session('coupon')['value']}}">You Save<span>${{number_format(session('coupon')['value'],2)}}</span></li>
-                                            @endif
+                                           
                                             @php
                                                 $total_amount=Helper::totalCartPrice();
                                                 if(session('coupon')){
@@ -399,23 +405,14 @@
                                     <h2>Payments</h2>
                                     <div class="content">
                                         <div class="checkbox">
-                                            {{-- <label class="checkbox-inline" for="1"><input name="updates" id="1" type="checkbox"> Check Payments</label> --}}
-                                            <form-group>
-                                                <input name="payment_method"  type="radio" value="cod"> <label> Cash On Delivery</label><br>
-                                                <input name="payment_method"  type="radio" value="paypal"> <label> PayPal</label> 
-                                            </form-group>
+                                            
+                                              No Online Payment
                                             
                                         </div>
                                     </div>
                                 </div>
                                 <!--/ End Order Widget -->
-                                <!-- Payment Method Widget -->
-                                <div class="single-widget payement">
-                                    <div class="content">
-                                        <img src="{{('backend/img/payment-method.png')}}" alt="#">
-                                    </div>
-                                </div>
-                                <!--/ End Payment Method Widget -->
+                              
                                 <!-- Button Widget -->
                                 <div class="single-widget get-button">
                                     <div class="content">
@@ -507,7 +504,7 @@
 				let subtotal = parseFloat( $('.order_subtotal').data('price') ); 
 				let coupon = parseFloat( $('.coupon_price').data('price') ) || 0; 
 				// alert(coupon);
-				$('#order_total_price span').text('$'+(subtotal + cost-coupon).toFixed(2));
+				$('#order_total_price span').text('$'+(subtotal + cost*1000  -coupon).toFixed(2));
 			});
 
 		});

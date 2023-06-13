@@ -4,8 +4,7 @@
 
 @section('main-content')
 <div class="card">
-<h5 class="card-header">Order       <a href="{{route('order.pdf',$order->id)}}" class=" btn btn-sm btn-primary shadow-sm float-right"><i class="fas fa-download fa-sm text-white-50"></i> Generate PDF</a>
-  </h5>
+<h5 class="card-header">Order    </h5>
   <div class="card-body">
     @if($order)
     <table class="table table-striped table-hover">
@@ -88,10 +87,7 @@
                         <td>Total Amount</td>
                         <td> : $ {{number_format($order->total_amount,2)}}</td>
                     </tr>
-                    <tr>
-                      <td>Payment Method</td>
-                      <td> : @if($order->payment_method=='cod') Cash on Delivery @else Paypal @endif</td>
-                    </tr>
+                    
                     <tr>
                         <td>Payment Status</td>
                         <td> : {{$order->payment_status}}</td>

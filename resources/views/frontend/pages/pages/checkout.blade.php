@@ -375,6 +375,9 @@
                                                     <span>Free</span>
                                                 @endif
                                             </li>
+                                            <li>
+                                                Minimum charge for small shipments: $50 to $100
+                                            </li>
                                             
                                             @if(session('coupon'))
                                             <li class="coupon_price" data-price="{{session('coupon')['value']}}">You Save<span>${{number_format(session('coupon')['value'],2)}}</span></li>
