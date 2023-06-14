@@ -376,10 +376,7 @@
                                                 @endif
                                             </li>
                                             <ul>
-                                                <li>Minimum charge for small shipments:</li>
-                                                <li>-By Air:€50 to €100</li>
-                                                <li>-By Truck:€100 to €300</li>
-                                                <li>-By Ship:€50 to €100</li>
+                                               
                                 
                                                 <li>Additional charges for specialized equipment, refrigeration, and other services may apply.</li>
                                               </ul>

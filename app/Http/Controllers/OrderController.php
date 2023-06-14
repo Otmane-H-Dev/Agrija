@@ -146,8 +146,8 @@ class OrderController extends Controller
         }
         Cart::where('user_id', auth()->user()->id)->where('order_id', null)->update(['order_id' => $order->id]);
 
-        // dd($users);        
-        request()->session()->flash('success','Your product successfully placed in order');
+        // dd($users);           
+        request()->session()->flash('success','Your product successfully placed in order, we will contact you in less than 48 hours');
         return redirect()->route('home');
     }
 
