@@ -45,7 +45,7 @@
                     <td>{{$review->id}}</td>
                     <td>{{$review->user_info['name']}}</td>
                     
-                    <td>{{$review->product->title}}</td> 
+                    <td>{{$review->product->title}}</td>   
                     <td>{{$review->review}}</td>
                     <td>
                      <ul style="list-style:none">
