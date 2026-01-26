@@ -62,38 +62,7 @@
           @enderror
         </div>
 
-        <div class="form-group">
-          <label for="facebook" class="col-form-label">Facebook</label>
-          <input type="text" class="form-control" name="facebook" required value="{{$data->facebook}}">
-          @error('facebook')
-          <span class="text-danger">{{$message}}</span>
-          @enderror
-        </div>
-
-        <div class="form-group">
-          <label for="instagram" class="col-form-label">Instagram</label>
-          <input type="text" class="form-control" name="instagram" required value="{{$data->instagram}}">
-          @error('instagram')
-          <span class="text-danger">{{$message}}</span>
-          @enderror
-        </div>
-        <div class="form-group">
-          <label for="youtube" class="col-form-label">Youtube</label>
-          <input type="text" class="form-control" name="youtube" required value="{{$data->youtube}}">
-          @error('youtube')
-          <span class="text-danger">{{$message}}</span>
-          @enderror
-        </div>
-        <div class="form-group">
-          <label for="twitter" class="col-form-label">Twitter</label>
-          <input type="text" class="form-control" name="twitter" required value="{{$data->twitter}}">
-          @error('twitter')
-          <span class="text-danger">{{$message}}</span>
-          @enderror
-        </div>
-        <div class="form-group mb-3">
-           <button class="btn btn-success" type="submit">Update</button>
-        </div>
+       
       </form>
     </div>
 </div>
