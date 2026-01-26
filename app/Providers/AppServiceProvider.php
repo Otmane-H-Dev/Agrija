@@ -24,10 +24,17 @@ class AppServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot()
-    {
-        Schema::defaultStringLength(191);
-        if (config('app.env') === 'production' || env('FORCE_HTTPS', false)) {
+{
+    Schema::defaultStringLength(191);
+
+    // This forces HTTPS regardless of the environment if accessed via a secure URL
+    if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
         URL::forceScheme('https');
     }
+    
+    // OR: Just force it completely if you know the site is live
+    if (env('APP_ENV') !== 'local') {
+        URL::forceScheme('https');
     }
+}
 }

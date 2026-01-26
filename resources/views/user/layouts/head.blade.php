@@ -6,7 +6,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>AGRIJA || DASHBOARD</title>
+         <title>Agrija wholesale Import and Export</title>
+      <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+      <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('favicon-96x96.png') }}">
+      <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}">
+      <link rel="manifest" href="{{ asset('site.webmanifest') }}">
+
   
     <!-- Custom fonts for this template-->
     <link href="{{asset('backend/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
