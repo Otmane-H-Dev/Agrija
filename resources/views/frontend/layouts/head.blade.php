@@ -1,7 +1,21 @@
 <!-- Meta Tag -->
 @yield('meta')
-<meta name="description" content="@yield('description', 'AGRIJA is a renowned Moroccan import/export wholesale company specializing in the production, packaging, and export of high-quality agricultural crops. With a rich history and a passion for sustainability, AGRIJA elevates Moroccan agriculture.')">
+<meta name="description" content="@yield('description', 'Agrija is Morocco\'s premier B2B platform for bulk agricultural trade. Connect with wholesale suppliers for premium produce, vegetables, and export-grade goods.')">
 <meta name="keywords" content="@yield('keywords', 'wholesale fruits vegetables, moroccan produce, wholesale african food, fresh produce suppliers, bulk fruits vegetables, wholesale prices')">
+
+<!-- Open Graph Meta Tags -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://agrija.site/product-grids">
+<meta property="og:title" content="Agrija | B2B Bulk Agricultural Trade Morocco">
+<meta property="og:description" content="Direct wholesale access to premium Moroccan produce and agricultural exports. Secure RFQ system for bulk buyers.">
+<meta property="og:image" content="https://agrija.site/img/agrija.png">
+
+<!-- Twitter Meta Tags -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:title" content="Agrija | B2B Bulk Agricultural Trade">
+<meta property="twitter:description" content="Direct wholesale access to premium Moroccan produce.">
+<meta property="twitter:image" content="https://agrija.site/img/agrija.png">
+
 <!-- Title Tag  -->
 <title>@yield('title')</title>
 <!-- Favicon -->
