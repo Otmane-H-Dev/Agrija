@@ -32,13 +32,9 @@
                                 <div class="single-widget category">
                                     <h3 class="title">Categories</h3>
                                     <ul class="categor-list">
-										@php
-											// $category = new Category();
-											$menu=App\Models\Category::getAllParentWithChild();
-										@endphp
-										@if($menu)
+										@if($categories)
 										<li>
-											@foreach($menu as $cat_info)
+											@foreach($categories as $cat_info)
 													@if($cat_info->child_cat->count()>0)
 														<li><a href="{{route('product-cat',$cat_info->slug)}}">{{$cat_info->title}}</a>
 															<ul>
@@ -53,11 +49,6 @@
 											@endforeach
 										</li>
 										@endif
-                                        {{-- @foreach(Helper::productCategoryList('products') as $cat)
-                                            @if($cat->is_parent==1)
-												<li><a href="{{route('product-cat',$cat->slug)}}">{{$cat->title}}</a></li>
-											@endif
-                                        @endforeach --}}
                                     </ul>
                                 </div>
                                 <!--/ End Single Widget -->
@@ -248,8 +239,8 @@
                                                         <i class="yellow fa fa-star"></i>
                                                         <i class="fa fa-star"></i> --}}
                                                         @php
-                                                            $rate=DB::table('product_reviews')->where('product_id',$product->id)->avg('rate');
-                                                            $rate_count=DB::table('product_reviews')->where('product_id',$product->id)->count();
+                                                            $rate = $product->getReview->avg('rate') ?? 0;
+                                                            $rate_count = $product->getReview->count();
                                                         @endphp
                                                         @for($i=1; $i<=5; $i++)
                                                             @if($rate>=$i)

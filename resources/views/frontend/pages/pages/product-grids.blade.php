@@ -32,13 +32,9 @@
                                 <div class="single-widget category">
                                     <h3 class="title">Categories</h3>
                                     <ul class="categor-list">
-										@php
-											// $category = new Category();
-											$menu=App\Models\Category::getAllParentWithChild();
-										@endphp
-										@if($menu)
+										@if($categories)
 										<li>
-											@foreach($menu as $cat_info)
+											@foreach($categories as $cat_info)
 													@if($cat_info->child_cat->count()>0)
 														<li><a href="{{route('product-cat',$cat_info->slug)}}">{{$cat_info->title}}</a>
 															<ul>
@@ -66,11 +62,7 @@
                                         <h3 class="title">Shop by Price</h3>
                                         <div class="price-filter">
                                             <div class="price-filter-inner">
-                                                @php
-                                                    $max=DB::table('products')->max('price');
-                                                    // dd($max);
-                                                @endphp
-                                                <div id="slider-range" data-min="0" data-max="{{$max}}"></div>
+                                                <div id="slider-range" data-min="0" data-max="{{$max_price}}"></div>
                                                 <div class="product_filter">
                                                 <button type="submit" class="filter_button">Filter</button>
                                                 <div class="label-input">

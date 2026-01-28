@@ -4,7 +4,9 @@ namespace App\Providers;
 
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+use App\Http\Helpers;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -24,17 +26,16 @@ class AppServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot()
-{
-    Schema::defaultStringLength(191);
+    {
+        Schema::defaultStringLength(191);
 
-    // This forces HTTPS regardless of the environment if accessed via a secure URL
-    if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
-        URL::forceScheme('https');
+        // Only force HTTPS in production environment
+        if (env('APP_ENV') === 'production') {
+            URL::forceScheme('https');
+        }
+
+        // Share cart and wishlist counts globally to avoid repeated queries
+        View::share('global_cart_count', Helpers::cartCount());
+        View::share('global_wishlist_count', Helpers::wishlistCount());
     }
-    
-    // OR: Just force it completely if you know the site is live
-    if (env('APP_ENV') !== 'local') {
-        URL::forceScheme('https');
-    }
-}
 }

@@ -46,4 +46,8 @@ class Product extends Model
         return $this->hasOne(Brand::class,'id','brand_id');
     }
 
+    public function reviews(){
+        return $this->hasMany('App\Models\ProductReview','product_id','id')->where('status','active');
+    }
+
 }
