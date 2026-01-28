@@ -1,5 +1,11 @@
 @extends('frontend.layouts.master')
 
+@section('title','AGRIJA || CONTACT US')
+
+@section('description', 'Contact AGRIJA for wholesale fruit and vegetable inquiries. Reach our Moroccan team for bulk orders and agricultural export information.')
+
+@section('keywords', 'contact agrija, wholesale inquiry, bulk orders, moroccan supplier contact, agricultural export contact')
+
 @section('main-content')
 	<!-- Breadcrumbs -->
 	<div class="breadcrumbs">

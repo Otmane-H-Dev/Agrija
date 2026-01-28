@@ -1,6 +1,10 @@
 @extends('frontend.layouts.master')
 
-@section('title','E-TECH || Blog Detail page')
+@section('title','AGRIJA || BLOG')
+
+@section('description', 'Read detailed AGRIJA blog posts on agriculture, farming practices, and wholesale produce.')
+
+@section('keywords', 'blog, agricultural articles, farming guide, produce tips, wholesale insights')
 
 @section('main-content')
     <!-- Breadcrumbs -->

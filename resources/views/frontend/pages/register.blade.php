@@ -1,6 +1,10 @@
 @extends('frontend.layouts.master')
 
-@section('title','AGRIJA || Register Page')
+@section('title','AGRIJA || REGISTER')
+
+@section('description', 'Register with AGRIJA for wholesale fruit and vegetable accounts. Get access to bulk pricing.')
+
+@section('keywords', 'register, create account, wholesale account, bulk pricing access')
 
 @section('main-content')
 	<!-- Breadcrumbs -->

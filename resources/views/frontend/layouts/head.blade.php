@@ -1,5 +1,7 @@
 <!-- Meta Tag -->
 @yield('meta')
+<meta name="description" content="@yield('description', 'AGRIJA is a renowned Moroccan import/export wholesale company specializing in the production, packaging, and export of high-quality agricultural crops. With a rich history and a passion for sustainability, AGRIJA elevates Moroccan agriculture.')">
+<meta name="keywords" content="@yield('keywords', 'wholesale fruits vegetables, moroccan produce, wholesale african food, fresh produce suppliers, bulk fruits vegetables, wholesale prices')">
 <!-- Title Tag  -->
 <title>@yield('title')</title>
 <!-- Favicon -->

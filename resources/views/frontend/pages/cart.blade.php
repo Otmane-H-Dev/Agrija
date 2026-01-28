@@ -1,5 +1,11 @@
 @extends('frontend.layouts.master')
-@section('title','Cart Page')
+
+@section('title','AGRIJA || SHOPPING CART')
+
+@section('description', 'Your AGRIJA shopping cart - Wholesale fruits and vegetables. Review your bulk order before checkout.')
+
+@section('keywords', 'shopping cart, wholesale order, bulk vegetables, fruit cart, checkout')
+
 @section('main-content')
 	<!-- Breadcrumbs -->
 	<div class="breadcrumbs">

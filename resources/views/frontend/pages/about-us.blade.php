@@ -1,6 +1,10 @@
 @extends('frontend.layouts.master')
 
-@section('title','AGRIJA || About Us')
+@section('title','AGRIJA || ABOUT US')
+
+@section('description', 'Learn about AGRIJA - Moroccan wholesale agriculture leader. We specialize in production, packaging, and export of premium quality fruits and vegetables.')
+
+@section('keywords', 'about agrija, moroccan company, wholesale agriculture, fruit export, vegetable export, agricultural producer')
 
 @section('main-content')
 

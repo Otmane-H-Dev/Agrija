@@ -1,5 +1,11 @@
 @extends('frontend.layouts.master')
-@section('title','Wishlist Page')
+
+@section('title','AGRIJA || WISHLIST')
+
+@section('description', 'Your AGRIJA wishlist - Save your favorite wholesale products for later.')
+
+@section('keywords', 'wishlist, saved products, wholesale favorites, bulk orders')
+
 @section('main-content')
 	<!-- Breadcrumbs -->
 	<div class="breadcrumbs">

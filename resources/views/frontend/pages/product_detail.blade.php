@@ -2,6 +2,9 @@
 @php
 	$title="Fresh wholesale"." $product_detail->title ". '- Buy High-Quality '." $product_detail->title ".' Online | AGRIJA';
 @endphp
+@section('title', $title)
+@section('description', 'Buy '.$product_detail->title.' wholesale from AGRIJA. Premium Moroccan produce with bulk pricing and quality guaranteed.')
+@section('keywords', 'wholesale '.$product_detail->title.', buy '.$product_detail->slug.', bulk '.$product_detail->title.', moroccan produce, fresh vegetables, wholesale prices')
 @section('meta')
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">

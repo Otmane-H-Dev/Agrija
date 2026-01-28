@@ -1,6 +1,10 @@
 @extends('frontend.layouts.master')
 
-@section('title','AGRIJA || Login Page')
+@section('title','AGRIJA || LOGIN')
+
+@section('description', 'Login to your AGRIJA account - Access wholesale pricing and manage your orders.')
+
+@section('keywords', 'login, customer account, wholesale account')
 
 @section('main-content')
     <!-- Breadcrumbs -->

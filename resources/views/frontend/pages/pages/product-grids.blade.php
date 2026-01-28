@@ -1,6 +1,10 @@
 @extends('frontend.layouts.master')
 
-@section('title','AGRIJA || PRODUCT PAGE')
+@section('title','AGRIJA || WHOLESALE PRODUCTS')
+
+@section('description', 'Shop AGRIJA wholesale fruits and vegetables. Premium Moroccan produce including tomatoes, peppers, melons, herbs, and more. Bulk prices available.')
+
+@section('keywords', 'wholesale fruits and vegetables, moroccan produce, wholesale tomatoes, bulk peppers, fresh vegetables, wholesale prices, african food suppliers, fresh produce wholesalers')
 
 @section('main-content')
 	<!-- Breadcrumbs -->

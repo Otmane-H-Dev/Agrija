@@ -1,6 +1,10 @@
 @extends('frontend.layouts.master')
 
-@section('title','Checkout page')
+@section('title','AGRIJA || CHECKOUT')
+
+@section('description', 'Secure checkout for AGRIJA wholesale orders. Complete your bulk fruit and vegetable purchase.')
+
+@section('keywords', 'checkout, secure payment, bulk order, wholesale purchase')
 
 @section('main-content')
 

@@ -1,6 +1,10 @@
 @extends('frontend.layouts.master')
 
-@section('title','AGRIJA || Order Track Page')
+@section('title','AGRIJA || TRACK ORDER')
+
+@section('description', 'Track your AGRIJA wholesale order. Monitor delivery of your bulk fruits and vegetables.')
+
+@section('keywords', 'track order, order status, delivery tracking, wholesale shipment')
 
 @section('main-content')
     <!-- Breadcrumbs -->
