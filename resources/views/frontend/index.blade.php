@@ -1,5 +1,5 @@
 @extends('frontend.layouts.master')
-@section('title','AGRIJA || HOME PAGE')
+@section('title','Agrija wholesale Import and Export')
 @section('main-content')
 <!-- Slider Area -->
 @if(count($banners)>0)

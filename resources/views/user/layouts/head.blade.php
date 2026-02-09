@@ -9,7 +9,7 @@
     
     <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://agrija.site/product-grids">
+    <meta property="og:url" content="https://agrija.site">
     <meta property="og:title" content="Agrija | B2B Bulk Agricultural Trade Morocco">
     <meta property="og:description" content="Direct wholesale access to premium Moroccan produce and agricultural exports. Secure RFQ system for bulk buyers.">
     <meta property="og:image" content="https://agrija.site/img/agrija.png">
