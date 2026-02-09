@@ -92,8 +92,9 @@
 	<!-- Countdown JS -->
 	<script src="{{asset('frontend/js/finalcountdown.min.js')}}"></script>
 	<!-- Nice Select JS -->
-		<!-- Flex Slider JS -->
-	<script src="{{asset('frontend/js/flex-slider.js')}}"></script>
+				<!-- Nice Select JS -->
+				<script src="{{asset('frontend/js/nicesellect.js')}}"></script>
+				<!-- Flex Slider JS -->	<script src="{{asset('frontend/js/flex-slider.js')}}"></script>
 	<!-- ScrollUp JS -->
 	<script src="{{asset('frontend/js/scrollup.js')}}"></script>
 	<!-- Onepage Nav JS -->
