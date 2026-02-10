@@ -93,7 +93,8 @@ window.onload = () => {
 		  Home Slider JS
 		=========================*/ 
 		$('.home-slider').each(function() {
-			if ($(this).children().length > 0) {
+			var items = $(this).children().length;
+			if (items > 0) {
 				$(this).owlCarousel({
 					items:1,
 					autoplay:true,
@@ -102,7 +103,7 @@ window.onload = () => {
 					animateIn: 'fadeIn',
 					animateOut: 'fadeOut',
 					autoplayHoverPause:true,
-					loop:true,
+					loop: items > 1,
 					nav:true,
 					merge:true,
 					dots:false,
@@ -115,13 +116,13 @@ window.onload = () => {
 							items:1,
 						},
 						480: {
-							items:2,
+							items:items > 2 ? 2 : items,
 						},
 						768: {
-							items:3,
+							items:items > 3 ? 3 : items,
 						},
 						1170: {
-							items:4,
+							items:items > 4 ? 4 : items,
 						},
 					}
 				});
@@ -132,7 +133,8 @@ window.onload = () => {
 		  Popular Slider JS
 		=========================*/ 
 		$('.popular-slider').each(function() {
-			if ($(this).children().length > 0) {
+			var items = $(this).children().length;
+			if (items > 0) {
 				$(this).owlCarousel({
 					items:1,
 					autoplay:true,
@@ -141,7 +143,7 @@ window.onload = () => {
 					animateIn: 'fadeIn',
 					animateOut: 'fadeOut',
 					autoplayHoverPause:true,
-					loop:true,
+					loop: items > 1,
 					nav:true,
 					merge:true,
 					dots:false,
@@ -154,13 +156,13 @@ window.onload = () => {
 							items:1,
 						},
 						480: {
-							items:2,
+							items:items > 2 ? 2 : items,
 						},
 						768: {
-							items:3,
+							items:items > 3 ? 3 : items,
 						},
 						1170: {
-							items:4,
+							items:items > 4 ? 4 : items,
 						},
 					}
 				});
@@ -171,7 +173,8 @@ window.onload = () => {
 		  Quick View Slider JS
 		=============================*/ 
 		$('.quickview-slider-active').each(function() {
-			if ($(this).children().length > 0) {
+			var items = $(this).children().length;
+			if (items > 0) {
 				$(this).owlCarousel({
 					items:1,
 					autoplay:true,
@@ -179,7 +182,7 @@ window.onload = () => {
 					smartSpeed: 400,
 					autoplayHoverPause:true,
 					nav:true,
-					loop:true,
+					loop: items > 1,
 					merge:true,
 					dots:false,
 					navText: ['<i class=" ti-arrow-left"></i>', '<i class=" ti-arrow-right"></i>'],
@@ -191,7 +194,8 @@ window.onload = () => {
 		  Home Slider 4 JS
 		=============================*/ 
 		$('.home-slider-4').each(function() {
-			if ($(this).children().length > 0) {
+			var items = $(this).children().length;
+			if (items > 0) {
 				$(this).owlCarousel({
 					items:1,
 					autoplay:true,
@@ -199,7 +203,7 @@ window.onload = () => {
 					smartSpeed: 400,
 					autoplayHoverPause:true,
 					nav:true,
-					loop:true,
+					loop: items > 1,
 					merge:true,
 					dots:false,
 					navText: ['<i class=" ti-arrow-left"></i>', '<i class=" ti-arrow-right"></i>'],
@@ -342,5 +346,76 @@ window.onload = () => {
 	//After 2s, the no-scroll class of the body will be removed
 	$('body').removeClass('no-scroll');
 	}, 2000); //Here you can change preloader time
+
+	//------------- DETAIL ADD - MINUS COUNT ORDER -------------//
+	$('.btn-number').click(function(e){
+		e.preventDefault();
+
+		var fieldName = $(this).attr('data-field');
+		var type      = $(this).attr('data-type');
+		var input = $("input[name='"+fieldName+"']");
+		var currentVal = parseInt(input.val());
+		if (!isNaN(currentVal)) {
+			if(type == 'minus') {
+
+				if(currentVal > input.attr('data-min')) {
+					input.val(currentVal - 1).change();
+				} 
+				if(parseInt(input.val()) == input.attr('data-min')) {
+					$(this).attr('disabled', true);
+				}
+
+			} else if(type == 'plus') {
+
+				if(currentVal < input.attr('data-max')) {
+					input.val(currentVal + 1).change();
+				}
+				if(parseInt(input.val()) == input.attr('data-max')) {
+					$(this).attr('disabled', true);
+				}
+
+			}
+		} else {
+			input.val(0);
+		}
+	});
+	$('.input-number').focusin(function(){
+	$(this).data('oldValue', $(this).val());
+	});
+	$('.input-number').change(function() {
+
+		var minValue =  parseInt($(this).attr('data-min'));
+		var maxValue =  parseInt($(this).attr('data-max'));
+		var valueCurrent = parseInt($(this).val());
+
+		var name = $(this).attr('name');
+		if(valueCurrent >= minValue) {
+			$(".btn-number[data-type='minus'][data-field='"+name+"']").removeAttr('disabled')
+		} else {
+			alert('Sorry, the minimum value was reached');
+			$(this).val($(this).data('oldValue'));
+		}
+		if(valueCurrent <= maxValue) {
+			$(".btn-number[data-type='plus'][data-field='"+name+"']").removeAttr('disabled')
+		} else {
+			alert('Sorry, the maximum value was reached');
+			$(this).val($(this).data('oldValue'));
+		}
+	});
+	$(".input-number").keydown(function (e) {
+			// Allow: backspace, delete, tab, escape, enter and .
+			if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||
+				// Allow: Ctrl+A
+				(e.keyCode == 65 && e.ctrlKey === true) || 
+				// Allow: home, end, left, right
+				(e.keyCode >= 35 && e.keyCode <= 39)) {
+					// let it happen, don't do anything
+					return;
+			}
+			// Ensure that it is a number and stop the keypress
+			if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {    
+				e.preventDefault();
+			}
+		});
 	 
 })(jQuery);
