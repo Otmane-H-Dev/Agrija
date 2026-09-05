@@ -8,8 +8,7 @@
                     <div class="top-left">
                         <ul class="list-main">
                             @php
-                                $settings=DB::table('settings')->get();
-                                
+                                $settings = $settings ?? DB::table('settings')->get();
                             @endphp
                             <li><i class="ti-headphone-alt"></i>@foreach($settings as $data) {{$data->phone}} @endforeach</li>
                             <li><i class="ti-email"></i> @foreach($settings as $data) {{$data->email}} @endforeach</li>
@@ -47,10 +46,7 @@
             <div class="row">
                 <div class="col-lg-2 col-md-2 col-12">
                     <!-- Logo -->
-                    <div class="logo">
-                        @php
-                            $settings=DB::table('settings')->get();
-                        @endphp                    
+                    <div class="logo">                  
                         <a href="{{route('home')}}"><img src="@foreach($settings as $data) {{$data->logo}} @endforeach" alt="logo" style="width: 50%; height: auto;"></a>
                     </div>
                     <!--/ End Logo -->

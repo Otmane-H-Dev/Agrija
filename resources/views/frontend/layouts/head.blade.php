@@ -69,9 +69,30 @@
     top: 0;
     left: 100%;
     margin-top: 0px;
-    margin-left: 0px;
     }
 
-    /*
+    /* Chatbot CSS Isolation to prevent host styles from polluting the widget */
+    .chatbot-widget-container p {
+        margin: 0 !important;
+        padding: 0 !important;
+        color: inherit !important;
+        font-size: inherit !important;
+        line-height: 1.5 !important;
+    }
+    .chatbot-widget-container span {
+        color: inherit !important;
+    }
+    .chatbot-widget-container a {
+        color: inherit !important;
+    }
+    .chatbot-widget-container input,
+    .chatbot-widget-container textarea {
+        color: #1f2937 !important;
+        font-family: inherit !important;
+        font-size: 14px !important;
+    }
+    .chatbot-widget-container button {
+        font-family: inherit !important;
+    }
 </style>
 @stack('styles')

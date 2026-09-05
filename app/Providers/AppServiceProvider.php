@@ -37,5 +37,19 @@ class AppServiceProvider extends ServiceProvider
         // Share cart and wishlist counts globally to avoid repeated queries
         View::share('global_cart_count', Helpers::cartCount());
         View::share('global_wishlist_count', Helpers::wishlistCount());
+
+        // Cache and share site settings across all views to prevent redundant DB calls
+        View::composer('*', function ($view) {
+            try {
+                if (Schema::hasTable('settings')) {
+                    $settings = \Illuminate\Support\Facades\Cache::remember('site_settings', 86400, function () {
+                        return \Illuminate\Support\Facades\DB::table('settings')->get();
+                    });
+                    $view->with('settings', $settings);
+                }
+            } catch (\Exception $e) {
+                // Fallback gracefully during migrations or if DB is offline
+            }
+        });
     }
 }

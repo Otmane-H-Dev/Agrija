@@ -40,7 +40,7 @@
     <div class="container-fluid">
         <div class="row">
             @php
-            $category_lists=DB::table('categories')->where('status','active')->limit(3)->get();
+            $category_lists = (isset($category_lists) && count($category_lists) > 0) ? $category_lists->take(3) : DB::table('categories')->where('status','active')->limit(3)->get();
             @endphp
             @if($category_lists)
                 @foreach($category_lists as $cat)
@@ -88,8 +88,7 @@
                             <!-- Tab Nav -->
                             <ul class="nav nav-tabs filter-tope-group" id="myTab" role="tablist">
                                 @php
-                                    $categories=DB::table('categories')->where('status','active')->where('is_parent',1)->get();
-                                    // dd($categories);
+                                    $categories = $category_lists ?? DB::table('categories')->where('status','active')->where('is_parent',1)->get();
                                 @endphp
                                 @if($categories)
                                 <button class="btn" style="background:black"data-filter="*">
@@ -269,7 +268,7 @@
                 </div>
                 <div class="row">
                     @php
-                        $product_lists=DB::table('products')->where('status','active')->orderBy('id','DESC')->limit(6)->get();
+                        $product_lists = (isset($product_lists) && count($product_lists) > 0) ? $product_lists->take(6) : DB::table('products')->where('status','active')->orderBy('id','DESC')->limit(6)->get();
                     @endphp
                     @foreach($product_lists as $product)
                         <div class="col-md-4">
@@ -393,8 +392,8 @@
                                                     <i class="yellow fa fa-star"></i>
                                                     <i class="fa fa-star"></i> --}}
                                                     @php
-                                                        $rate=DB::table('product_reviews')->where('product_id',$product->id)->avg('rate');
-                                                        $rate_count=DB::table('product_reviews')->where('product_id',$product->id)->count();
+                                                        $rate = (isset($product->reviews) && count($product->reviews) > 0) ? $product->reviews->avg('rate') : (DB::table('product_reviews')->where('product_id',$product->id)->avg('rate') ?? 0);
+                                                        $rate_count = (isset($product->reviews)) ? $product->reviews->count() : DB::table('product_reviews')->where('product_id',$product->id)->count();
                                                     @endphp
                                                     @for($i=1; $i<=5; $i++)
                                                         @if($rate>=$i)
