@@ -1,4 +1,4 @@
-var cacheName = 'agrija-pwa';
+var cacheName = 'agrija-pwa-v2';
 var filesToCache = [
   '/',
   '/frontend/css/style.css',
@@ -12,11 +12,27 @@ var filesToCache = [
 
 /* Start the service worker and cache all of the app's content */
 self.addEventListener('install', function(e) {
+  self.skipWaiting();
   e.waitUntil(
     caches.open(cacheName).then(function(cache) {
       return cache.addAll(filesToCache);
     }).catch(function(err) {
         console.log('SW cache addAll error:', err);
+    })
+  );
+});
+
+/* Activate event to clear old caches */
+self.addEventListener('activate', function(e) {
+  e.waitUntil(
+    caches.keys().then(function(keyList) {
+      return Promise.all(keyList.map(function(key) {
+        if (key !== cacheName) {
+          return caches.delete(key);
+        }
+      }));
+    }).then(function() {
+      return self.clients.claim();
     })
   );
 });
