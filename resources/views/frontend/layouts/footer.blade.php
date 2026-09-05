@@ -133,3 +133,4 @@
 			});
 		});
 	  </script>
+	<script src="https://www.wanochat.com/dist/embed.js" data-chatbot-unique-name="agrija-1788575871" async></script>
